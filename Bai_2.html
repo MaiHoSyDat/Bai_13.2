@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<h1>Từ điển tiếng anh</h1>
+<h4>(Ví dụ:"banana", "apple", "mangoe", "orange" )</h4>
+Nhập từ bạn cần tra tiếng Việt: <input placeholder="Nhập từ tiếng anh" id="english">
+<button onclick="kiem_tra()">Kiểm tra</button>
+<p id="hien_thi"></p>
+</body>
+</html>
+<script>
+    function kiem_tra() {
+        let english = ["banana", "apple", "mangoe", "orange"]
+        let vietnamese = ["Quả chuối", "Quả táo", "Quả xoài", "Quả cam"];
+        let a = document.getElementById("english").value;
+        let hien_thi = document.getElementById("hien_thi")
+        let index= -1;
+         for (let i = 0;i < english.length; i++){
+             if(a == english[i]){
+                 index = i
+                 break;
+             }
+         }
+        if (index != -1){
+            hien_thi.innerHTML= vietnamese[index]
+        }else {
+            hien_thi.innerHTML = "Không tìm thấy từ khóa " + a
+        }
+
+    }
+</script>
